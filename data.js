@@ -427,7 +427,7 @@ const Storage = {
 
   async saveMenu(data) {
     try {
-      await set(ref(db, 'menuData'), data);
+      await set(ref(db, 'menuData'), JSON.stringify(data));
       window.dispatchEvent(new Event('storage-menu-updated'));
     } catch(e) {
       console.error("Firebase saveMenu error:", e);
@@ -438,7 +438,7 @@ const Storage = {
     try {
       const snapshot = await get(ref(db, 'menuData'));
       if (snapshot.exists()) {
-        return snapshot.val();
+        return JSON.parse(snapshot.val());
       }
     } catch(e) {
       console.error("Firebase getMenu error:", e);
