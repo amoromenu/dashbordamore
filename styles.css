@@ -1214,12 +1214,15 @@ input, textarea, select {
   background: rgba(230, 57, 70, 0.02);
 }
 .image-upload-preview {
-  max-width: 140px;
-  max-height: 140px;
-  margin: 10px auto 0 auto;
+  width: 180px;
+  height: 180px;
+  margin: 12px auto 0 auto;
   border-radius: var(--radius-sm);
-  border: 1px solid var(--black-border);
+  border: 2px solid var(--red);
   display: none;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
 .image-upload-wrapper i {
   font-size: 2rem;
